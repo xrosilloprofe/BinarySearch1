@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        int[][] grades = new int[2][20];
+        double[][] grades = new double[2][20];
         fillArray(grades);
         show(grades);
         //primero debemos ordenar la matriz
@@ -13,24 +13,24 @@ public class Main {
 
     }
 
-    private static void fillArray(int[][] matrix) {
+    private static void fillArray(double[][] matrix) {
         for (int i = 0; i < matrix.length; i++)
             for (int j = 0; j < matrix[0].length; j++) {
-                matrix[i][j] = (int) (Math.random() * 11);
+                matrix[i][j] = (Math.random() * 11);
             }
     }
 
-    private static void show(int[][] matrix) {
-        for (int[] vector: matrix) {
-            for (int element : vector) {
-                if (element==10) System.out.print(element + " ");
+    private static void show(double[][] matrix) {
+        for (double[] vector: matrix) {
+            for (double element : vector) {
+                if (element>=10) System.out.print(element + " ");
                 else System.out.print(" " + element + " ");
             }
             System.out.println();
         }
     }
 
-    public static boolean busquedaBinaria(int[][] array, int element) {
+    public static boolean busquedaBinaria(double[][] array, int element) {
         boolean encontrado = false;
         int primero = 0;
         int ultimo=array[1].length-1;
@@ -52,9 +52,9 @@ public class Main {
 
     }
 
-    public static void quickSort(int[][] v, int left, int right) {
+    public static void quickSort(double[][] v, int left, int right) {
 
-        int pivot = v[1][(left + right)/2];
+        double pivot = v[1][(left + right)/2];
         int i = left;
         int d = right;
 
@@ -80,9 +80,9 @@ public class Main {
 
     }
 
-    private static void swap(int[][] v, int i, int j) {
+    private static void swap(double[][] v, int i, int j) {
         for (int k = 0; k < v.length; k++) {
-            int aux = v[k][i];
+            double aux = v[k][i];
             v[k][i] = v[k][j];
             v[k][j] = aux;
         }
